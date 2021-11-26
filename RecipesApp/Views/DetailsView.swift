@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RecipeView: View {
+struct DetailsView: View {
   var recipe: Recipe
   var body: some View {
     ScrollView(showsIndicators: false) {
@@ -50,8 +50,8 @@ extension UINavigationController {
   }
 }
 
-struct RecipeView_Previews: PreviewProvider {
+struct DetailsView_Previews: PreviewProvider {
   static var previews: some View {
-    RecipeView(recipe: RecipeModel().recipes[0])
+    DetailsView(recipe: RecipeModel().recipes[0])
   }
 }

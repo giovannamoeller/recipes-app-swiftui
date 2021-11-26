@@ -18,7 +18,7 @@ struct RecipesView: View {
           VStack(alignment: .leading) {
             ForEach(recipeModel.recipes) { recipe in
               NavigationLink {
-                RecipeView(recipe: recipe)
+                DetailsView(recipe: recipe)
               } label: {
                 HStack(spacing: 16) {
                   Image(recipe.image)
