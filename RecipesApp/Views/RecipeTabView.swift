@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RecipeTabView: View {
+    
   var body: some View {
     TabView {
       RecipesView()
@@ -26,7 +27,8 @@ struct RecipeTabView: View {
           }
           
         }
-    }
+    }.environmentObject(RecipeModel())
+    // RecipesView and FeaturedRecipesView are in hierarchic
   }
 }
 

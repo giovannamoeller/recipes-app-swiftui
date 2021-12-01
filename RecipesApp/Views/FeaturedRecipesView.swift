@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct FeaturedRecipesView: View {
+  
+  // @ObservedObject var model = RecipeModel() -> recreate the list (two sets of data)
+  @EnvironmentObject var recipeModel:RecipeModel
+  
   var body: some View {
     Text("Hello, World!")
   }

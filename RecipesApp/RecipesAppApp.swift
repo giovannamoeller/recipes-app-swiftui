@@ -12,6 +12,7 @@ struct RecipesAppApp: App {
   var body: some Scene {
     WindowGroup {
       RecipesView()
+        //.environmentObject(RecipeModel())
     }
   }
 }

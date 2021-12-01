@@ -9,8 +9,8 @@ import SwiftUI
 
 struct RecipesView: View {
   
-  @ObservedObject var recipeModel = RecipeModel()
-  
+  @EnvironmentObject var recipeModel:RecipeModel
+    
   var body: some View {
     NavigationView {
       VStack {
