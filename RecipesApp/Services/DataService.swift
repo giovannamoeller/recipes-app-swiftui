@@ -21,7 +21,12 @@ struct DataService {
         recipeData = try decoder.decode([Recipe].self, from: data)
         for r in recipeData {
           r.id = UUID()
+          
+          for i in r.ingredients {
+            i.id = UUID()
+          }
         }
+        
         return recipeData
       } catch {
         print(error)
@@ -29,6 +34,6 @@ struct DataService {
     } catch {
       print(error)
     }
-    return [Recipe]()
+    return [Recipe]() // Empty array if we don't get any JSON file
   }
 }
