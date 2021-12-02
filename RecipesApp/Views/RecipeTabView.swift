@@ -35,5 +35,6 @@ struct RecipeTabView: View {
 struct TabView_Previews: PreviewProvider {
   static var previews: some View {
     RecipeTabView()
+      .environmentObject(RecipeModel())
   }
 }

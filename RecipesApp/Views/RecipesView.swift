@@ -13,9 +13,15 @@ struct RecipesView: View {
     
   var body: some View {
     NavigationView {
-      VStack {
+      VStack(alignment: .leading) {
+        Text("All Recipes")
+          .bold()
+          .padding(.leading)
+          .padding(.top, 40)
+          .font(.largeTitle)
+        
         ScrollView(showsIndicators: false) {
-          VStack(alignment: .leading) {
+          LazyVStack(alignment: .leading) {
             ForEach(recipeModel.recipes) { recipe in
               NavigationLink {
                 DetailsView(recipe: recipe)
@@ -24,7 +30,7 @@ struct RecipesView: View {
                   Image(recipe.image)
                     .resizable()
                     .scaledToFill()
-                    .frame(width: 100, height: 70)
+                    .frame(width: 70, height: 70)
                     .clipped()
                     .cornerRadius(8.0)
                   Text(recipe.name)
@@ -44,13 +50,16 @@ struct RecipesView: View {
             }.listStyle(.plain)
           }.padding(.horizontal)
         }
-      }.navigationTitle("My Recipes")
+      }
+      //.navigationTitle("My Recipes")
+      .navigationBarHidden(true)
+      
     }
   }
 }
 
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
-    RecipesView()
+    RecipesView().environmentObject(RecipeModel())
   }
 }
